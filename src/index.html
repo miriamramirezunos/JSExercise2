@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Events!</title>
+</head>
+<body>
+	<button onclick="useUserInput()">Click me!</button>
+	<span id="user-error"></span>
+	<p id="user-input"></p>
+	<script>
+	// Your code goes here
+	function useUserInput(){
+		let input = prompt("Please enter the User Input","");
+		let userError = document.getElementById("user-error");
+		if (isItValid(input)){ 
+			document.getElementById("user-input").innerHTML = "User Input: " + input; 	
+			userError.textContent="";
+		}
+		else{		
+			userError.textContent="  Warning: Invalid entry  ";
+			userError.style.color="red";
+			document.getElementById("user-input").innerHTML = "";
+		}
+	}
+	function isItValid(str){
+		if (!str.trim().length){
+			return false
+		}
+		else{
+			return true
+		}
+	}
+	</script>
+</body>
+</html>
